@@ -1,4 +1,4 @@
-package com.example.demo;
+package gana_reciclando;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
