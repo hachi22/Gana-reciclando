@@ -32,8 +32,7 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 	            
 	            builder.password(user.getPassword());
 	            
-	        }
-	        else throw new UsernameNotFoundException("User dont found");
+	        }else throw new UsernameNotFoundException("User dont found");
 	        return builder.build();
 	    }
 	}

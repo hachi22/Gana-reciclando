@@ -25,13 +25,4 @@ public class UserModel {
 	private int pointsGame2 = 0;
 	private int pointsGame3 = 0;
 	
-	
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	
-	
 }
