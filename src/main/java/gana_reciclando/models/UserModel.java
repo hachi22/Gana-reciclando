@@ -25,4 +25,12 @@ public class UserModel {
 	private int pointsGame2 = 0;
 	private int pointsGame3 = 0;
 	
+	
+	public UserModel(String userName, String password) {
+		this.userName = userName;
+		this.password = password;
+	}
+	
+	
+	
 }
