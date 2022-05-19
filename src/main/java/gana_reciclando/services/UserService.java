@@ -17,12 +17,12 @@ public class UserService {
 	 
 	 @PostConstruct
 	    public void init() {
-	        userRepository.save(new UserModel("user1", passwordEncoder("1234")));
+	        userRepository.save(new UserModel("user1", passwordEncoder("1234"),0,0,0));
 	    }
 
 	    
 	    public UserModel putUser(UserModel user){
-	        //user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
+	        user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
 	        userRepository.save(user);
 	        return user;}
 
