@@ -11,8 +11,8 @@ import gana_reciclando.repositories.UserRepository;
 
 @Service
 public class UserService {
-	
-	@Autowired(required = false)
+	/*
+	@Autowired
 	 private UserRepository userRepository;
 	 
 	 @PostConstruct
@@ -35,4 +35,5 @@ public class UserService {
 	    public String passwordEncoder(String pass) {
 	        return new BCryptPasswordEncoder().encode(pass);
 	    }
+	    */
 }

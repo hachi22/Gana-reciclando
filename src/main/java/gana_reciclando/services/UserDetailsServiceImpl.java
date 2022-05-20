@@ -15,7 +15,13 @@ import gana_reciclando.models.UserModel;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService{
-	
+
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	/*
 	 @Autowired
 	    UserService userService;
 
@@ -34,6 +40,7 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 	        }else throw new UsernameNotFoundException("User dont found");
 	        return builder.build();
 	    }
+	    */
 	}
 
 	
