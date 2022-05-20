@@ -28,7 +28,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	                .authorizeRequests()
 	                .antMatchers(resources).permitAll()
 	                .antMatchers("/","/index","/register","/login").permitAll()
-	                .antMatchers("/main", "listVideogame", "add").authenticated()
 	                .anyRequest().authenticated()
 	                .and()
 	                .formLogin()
@@ -55,8 +54,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	    @Autowired
 	    UserDetailsServiceImpl userService;
 
-	    @Override
-	    public void configure(AuthenticationManagerBuilder auth) throws Exception {
+	    @Autowired
+	    public void ConfigureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 	        auth.userDetailsService(userService).passwordEncoder(passwordEncoder());
 	    }
 	    

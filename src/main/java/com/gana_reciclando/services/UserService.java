@@ -2,6 +2,7 @@ package com.gana_reciclando.services;
 import javax.annotation.PostConstruct;
 
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -21,7 +22,8 @@ public class UserService {
 	        userRepository.save(user);
 	        return user;
 	        }
-
+	    
+	   
 
 	    public UserModel checkUsername(String username){
 	        return userRepository.findById(username).orElse(null);
