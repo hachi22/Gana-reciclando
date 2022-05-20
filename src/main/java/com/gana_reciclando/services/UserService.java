@@ -14,11 +14,6 @@ public class UserService {
 	
 	@Autowired
 	 private UserRepository userRepository;
-	 
-	 @PostConstruct
-	 public void init() {
-	    userRepository.save(new UserModel("user1", passwordEncoder("1234")));
-	 }
 
 	    
 	    public UserModel putUser(UserModel user){
