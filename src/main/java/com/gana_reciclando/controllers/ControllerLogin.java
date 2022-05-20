@@ -1,22 +1,23 @@
-package gana_reciclando.controllers;
+package com.gana_reciclando.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import gana_reciclando.models.UserModel;
-import gana_reciclando.repositories.UserRepository;
-import gana_reciclando.services.UserService;
+import com.gana_reciclando.models.UserModel;
+import com.gana_reciclando.repositories.UserRepository;
+import com.gana_reciclando.services.UserService;
 
 @Controller
 public class ControllerLogin {
-/*
-	@Autowired
+
+    @Autowired
     UserService userService;
-	@Autowired
+    @Autowired
     UserRepository userRepository;
 
 
@@ -43,5 +44,5 @@ public class ControllerLogin {
         return "redirect:/";
 
     }
-*/
+
 }

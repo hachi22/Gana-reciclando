@@ -1,8 +1,11 @@
-package gana_reciclando.security;
+package com.gana_reciclando.security;
 
-import gana_reciclando.services.UserDetailsServiceImpl;
+import com.gana_reciclando.services.UserDetailsServiceImpl;
+import com.gana_reciclando.services.UserService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -14,7 +17,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
-	/*
+	
 	 String[] resources = new String[]{
 	            "/include/**","/css/**","/icons/**","/images/**","/js/**","/layer/**"
 	    };
@@ -47,6 +50,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	        bCryptPasswordEncoder = new BCryptPasswordEncoder(4);
 	        return bCryptPasswordEncoder;
 	    }
+	    
 
 	    @Autowired
 	    UserDetailsServiceImpl userService;
@@ -55,5 +59,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 	        auth.userDetailsService(userService).passwordEncoder(passwordEncoder());
 	    }
-	    */
+	    
 }
