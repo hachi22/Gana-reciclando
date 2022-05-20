@@ -25,6 +25,7 @@ public class UserService {
 	    
 	   
 
+
 	    public UserModel checkUsername(String username){
 	        return userRepository.findById(username).orElse(null);
 	    }
