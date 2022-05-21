@@ -25,11 +25,7 @@ public class UserService {
 	        return user;
 	        }
 	    
-	    @PostConstruct
-	    public void init() {
-	        userRepository.save(new UserModel("user1", passwordEncoder("1234")));
-	   
-	    }
+	    
 	   
 
 

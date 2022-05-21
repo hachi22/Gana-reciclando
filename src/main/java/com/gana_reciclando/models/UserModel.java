@@ -3,6 +3,8 @@ package com.gana_reciclando.models;
 import javax.persistence.Entity;
 
 import javax.persistence.Id;
+import javax.persistence.Table;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,6 +15,7 @@ import lombok.NoArgsConstructor;
 @Data
 
 @Entity
+@Table(name="\"User\"")
 public class UserModel {
 	@Id
 	private String userName;
