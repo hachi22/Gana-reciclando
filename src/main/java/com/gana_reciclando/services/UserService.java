@@ -3,12 +3,14 @@ import javax.annotation.PostConstruct;
 
 
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.gana_reciclando.models.UserModel;
 import com.gana_reciclando.repositories.UserRepository;
+
 
 @Service
 public class UserService {
@@ -23,6 +25,11 @@ public class UserService {
 	        return user;
 	        }
 	    
+	    @PostConstruct
+	    public void init() {
+	        userRepository.save(new UserModel("user1", passwordEncoder("1234")));
+	   
+	    }
 	   
 
 
