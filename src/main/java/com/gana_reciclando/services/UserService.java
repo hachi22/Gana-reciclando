@@ -26,9 +26,6 @@ public class UserService {
 	        return user;
 	        }
 	  
-	   
-
-
 	    public UserObject checkUsername(String username){
 	        return userRepository.findById(username).orElse(null);
 	    }
