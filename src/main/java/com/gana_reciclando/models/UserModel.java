@@ -15,22 +15,22 @@ import lombok.NoArgsConstructor;
 @Data
 
 @Entity
-@Table(name="\"User\"")
+@Table(name="user")
 public class UserModel {
 	@Id
-	private String userName;
+	private String username;
 	
 	private String password;
 	
-	private int pointsGame1 = 0;
+	private int points_game1 = 0;
 	
-	private int pointsGame2 = 0;
+	private int points_game2 = 0;
 	
-	private int pointsGame3 = 0;
+	private int points_game3 = 0;
 	
 	
-	public UserModel(String userName, String password) {
-		this.userName = userName;
+	public UserModel(String username, String password) {
+		this.username = username;
 		this.password = password;
 	}
 	
