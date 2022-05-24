@@ -13,7 +13,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.security.core.userdetails.User;
 
-import com.gana_reciclando.models.UserModel;
+import com.gana_reciclando.models.UserObject;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService{
@@ -24,7 +24,7 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		  UserModel user = userService.checkUsername(username);
+		  UserObject user = userService.checkUsername(username);
 	       User.UserBuilder builder;
 
 	        if(user!=null){

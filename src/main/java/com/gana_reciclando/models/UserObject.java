@@ -8,14 +8,17 @@ import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@ToString
 
 @Entity
-public class UserModel {
+public class UserObject {
+	
 	@Id
 	private String username;
 	
@@ -28,7 +31,7 @@ public class UserModel {
 	private int points_game3 = 0;
 	
 	
-	public UserModel(String username, String password) {
+	public UserObject(String username, String password) {
 		this.username = username;
 		this.password = password;
 	}

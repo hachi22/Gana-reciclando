@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.gana_reciclando.models.UserModel;
+import com.gana_reciclando.models.UserObject;
 import com.gana_reciclando.repositories.UserRepository;
 
 
@@ -20,20 +20,16 @@ public class UserService {
 	 private UserRepository userRepository;
 
 	    
-	    public UserModel putUser(UserModel user){
+	    public UserObject putUser(UserObject user){
 	        user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
 	        userRepository.save(user);
 	        return user;
 	        }
-	    
-	    @PostConstruct
-	    public void init() {
-	        userRepository.save(new UserModel("user1", passwordEncoder("1234")));
-	    }
+	  
 	   
 
 
-	    public UserModel checkUsername(String username){
+	    public UserObject checkUsername(String username){
 	        return userRepository.findById(username).orElse(null);
 	    }
 

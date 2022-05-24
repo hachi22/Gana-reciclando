@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.gana_reciclando.models.UserModel;
+import com.gana_reciclando.models.UserObject;
 import com.gana_reciclando.repositories.UserRepository;
 import com.gana_reciclando.services.UserService;
 
@@ -34,12 +34,12 @@ public class ControllerLogin {
 
     @GetMapping("/register")
     public String register(Model model){
-        model.addAttribute("user", new UserModel());
+        model.addAttribute("user", new UserObject());
         return "register";
     }
 
     @PostMapping("/register")
-    public String afegirSubmit(@ModelAttribute("user") UserModel user){
+    public String afegirSubmit(@ModelAttribute("user") UserObject user){
         userService.putUser(user);
         return "redirect:/";
 
