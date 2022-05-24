@@ -15,7 +15,6 @@ import lombok.NoArgsConstructor;
 @Data
 
 @Entity
-@Table(name="user")
 public class UserModel {
 	@Id
 	private String username;
