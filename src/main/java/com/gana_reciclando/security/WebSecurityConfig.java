@@ -16,7 +16,7 @@ import com.gana_reciclando.services.UserDetailsServiceImpl;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     String[] resources = new String[]{
-            "/include/**","/css/**","/icons/**","/images/**","/js/**","/layer/**"
+            "components/*","assets/*","logic/*","pages/**"
     };
 
     @Override
@@ -24,9 +24,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers(resources).permitAll()
-                .antMatchers("/","/index","/register","/login").permitAll()
-                .antMatchers("/main", "listVideogame", "add").authenticated()
-                .antMatchers("/listUsers","/update","/delete").hasRole("ADMIN")
+                .antMatchers("/","/contact","/register","/about").permitAll()
+                .antMatchers("/games").authenticated()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
