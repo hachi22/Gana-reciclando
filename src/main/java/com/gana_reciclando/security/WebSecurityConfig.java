@@ -15,6 +15,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.gana_reciclando.services.UserDetailsServiceImpl;
 
@@ -25,6 +27,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     String[] resources = new String[]{
             "components/*","assets/*","logic/*","pages/**"
     };
+    
+    public WebMvcConfigurer corsConfigurer() {
+		return new WebMvcConfigurer() {
+			@Override
+			public void addCorsMappings(CorsRegistry registry) {
+				registry.addMapping("/greeting-javaconfig").allowedOrigins("http://localhost:3000");
+			}
+		};
+	}
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
