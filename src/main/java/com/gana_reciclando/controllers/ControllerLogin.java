@@ -10,12 +10,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.gana_reciclando.models.UserObject;
 import com.gana_reciclando.repositories.UserRepository;
 import com.gana_reciclando.services.UserService;
 
-@Controller
+@RestController
 public class ControllerLogin {
 
     @Autowired
