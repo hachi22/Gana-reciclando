@@ -25,12 +25,7 @@ public class ControllerLogin {
     @Autowired
     UserRepository userRepository;
 
-    @PostMapping("/login")
-    public void login(
-      @RequestParam("username") final String username,
-      @RequestParam("password") final String password) {
-      userService.checkUsername(username);
-    }
+   
 
     @GetMapping("/register")
     public String register(Model model){
