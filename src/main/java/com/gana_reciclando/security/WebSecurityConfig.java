@@ -25,22 +25,37 @@ import com.gana_reciclando.services.UserDetailsServiceImpl;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    String[] resources = new String[]{
-            "components/*","assets/*","logic/*","pages/**"
-    };
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-                .authorizeRequests()
-                .antMatchers(resources).permitAll()      
-                .antMatchers("/","/contact","/register","/about").permitAll()
-                .antMatchers("/games").authenticated()
-                .anyRequest().permitAll()
-                .and()
-                .formLogin()
-                .loginPage("/login")
-                .permitAll();
+        	.cors()
+        	.and()
+        	.csrf()
+        	.disable()
+        	.exceptionHandling()
+        	.and()
+        	.sessionManagement()
+        	.and()
+        	.authorizeRequests()
+        	.antMatchers("/",
+            "/favicon.ico",
+            "/**/*.png",
+            "/**/*.gif",
+            "/**/*.svg",
+            "/**/*.jpg",
+            "/**/*.html",
+            "/**/*.css",
+            "/**/*.js")
+        	.permitAll()
+        	.and()     		
+            .authorizeRequests()
+            .antMatchers("/","/contact","/register","/about").permitAll()
+            .antMatchers("/games").authenticated()
+            .anyRequest().permitAll()
+            .and()
+            .formLogin()
+            .loginPage("/login")
+            .permitAll();
     }
     
     BCryptPasswordEncoder bCryptPasswordEncoder;
