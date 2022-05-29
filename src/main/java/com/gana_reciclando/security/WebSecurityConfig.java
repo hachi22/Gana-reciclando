@@ -28,23 +28,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     String[] resources = new String[]{
             "components/*","assets/*","logic/*","pages/**"
     };
-    
-    public WebMvcConfigurer corsConfigurer() {
-		return new WebMvcConfigurer() {
-			@Override
-			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/greeting-javaconfig").allowedOrigins("http://localhost:3000");
-			}
-		};
-	}
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-        		.csrf().disable()   
-        		.authorizeRequests()
-        		.antMatchers(HttpMethod.OPTIONS,"/**").permitAll()
-        		.and()
                 .authorizeRequests()
                 .antMatchers(resources).permitAll()      
                 .antMatchers("/","/contact","/register","/about").permitAll()
@@ -54,20 +41,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .loginPage("/login")
                 .permitAll();
-    }
-    
-
-    @Bean
-    public FilterRegistrationBean<CorsFilter> corsFilter() {
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        CorsConfiguration config = new CorsConfiguration();
-        config.addAllowedOrigin("*");
-        config.addAllowedHeader("*");
-        config.addAllowedMethod("*");
-        source.registerCorsConfiguration("/**", config);
-        FilterRegistrationBean<CorsFilter> bean = new FilterRegistrationBean<CorsFilter>(new CorsFilter(source));
-        bean.setOrder(0);
-        return bean;
     }
     
     BCryptPasswordEncoder bCryptPasswordEncoder;

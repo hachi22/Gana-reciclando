@@ -7,7 +7,6 @@ import org.springframework.context.annotation.ComponentScan;
 
 import com.gana_reciclando.models.UserObject;
 import com.gana_reciclando.repositories.UserRepository;
-@ComponentScan(basePackages = {"com.gana_reciclando"})
 @SpringBootApplication
 public class ProyectoFinalApplication {
 
