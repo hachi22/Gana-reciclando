@@ -24,12 +24,13 @@ public class ControllerLogin {
     UserService userService;
     @Autowired
     UserRepository userRepository;
-    
+
     @PostMapping("/login")
-    public UserObject getUser(@PathVariable String userId){
-        UserObject user = userService.checkUsername(userId);
-        return user;
-    } 
+    public void login(
+      @RequestParam("username") final String username,
+      @RequestParam("password") final String password) {
+      userService.checkUsername(username);
+    }
 
     @GetMapping("/register")
     public String register(Model model){
